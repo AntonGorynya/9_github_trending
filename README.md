@@ -1,6 +1,6 @@
 # Github Trends
 
-This script analysis top github project for last week and then output their name, actor, and amount open issue
+This script analysis top github project for last week and then output their name, avtor, and amount open issue
 
 # Quickstart
 
