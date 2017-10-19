@@ -15,8 +15,8 @@ def get_open_issues_amount(repo_owner, repo_name):
     url = "https://api.github.com/search/issues"
     payload = {'q': "user:{}".format(repo_owner['login']), 'repo': repo_name}
     issues = requests.get(url, params=payload)
-    for item in issues.json()['items']:
-        if item['state'] == 'open':
+    for issue in issues.json()['items']:
+        if issue['state'] == 'open':
             amount += 1
     return amount
 
