@@ -3,9 +3,9 @@ from datetime import date, timedelta
 
 
 def get_trending_repositories(top_size):
-    start_date = date.today() - timedelta(weeks=1)
+    week_ago = date.today() - timedelta(weeks=1)
     url = "https://api.github.com/search/repositories"
-    payload = {'q': "created:>{}".format(start_date), "sort": "stars"}
+    payload = {'q': "created:>{}".format(week_ago), "sort": "stars"}
     top_repo = requests.get(url, params=payload).json()['items'][:top_size]
     return top_repo
 
