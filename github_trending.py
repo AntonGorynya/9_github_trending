@@ -22,7 +22,7 @@ def get_open_issues_amount(repo_owner, repo_name):
 
 
 if __name__ == '__main__':
-    top_size = 5
+    top_size = 20
     for repo in get_trending_repositories(top_size):
         repo_owner = repo['owner']
         repo_name = repo['name']
