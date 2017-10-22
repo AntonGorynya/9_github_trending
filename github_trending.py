@@ -13,8 +13,8 @@ def get_trending_repositories(top_size):
 def get_open_issues_amount(repo_owner, repo_name):
     url = "https://api.github.com/search/issues"
     payload = {'q': "user:{}".format(repo_owner['login']), 'repo': repo_name}
-    issues = requests.get(url, params=payload)
-    amount = len([issue for issue in issues.json()['items']
+    responce = requests.get(url, params=payload)
+    amount = len([issue for issue in responce.json()['items']
                   if issue['state'] == 'open'])
     return amount
 
